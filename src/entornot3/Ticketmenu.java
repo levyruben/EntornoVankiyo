@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package entornot3;
 
-/**
- *
- * @author ruben
- */
 public class Ticketmenu {
     
     int Contador;
@@ -18,7 +11,7 @@ public class Ticketmenu {
     
     do {                                                                        //inicio el bucle madre.        
                                                              
-            System.out.println("Bolera DAMDAW");                                //imprimimos el primer ticke.
+            System.out.println("Fruteria EL BANQUILLO");                                //imprimimos el primer ticke.
             System.out.println("===================");
             System.out.println("1. Vender Ticket.");
             System.out.println("2. Resumen de Ventas.");
