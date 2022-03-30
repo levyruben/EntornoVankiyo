@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 
 public class Cola {
-ArrayList <Cliente> Lista_Cola = new ArrayList<Cliente>();
+    ArrayList <Cliente> Lista_Cola = new ArrayList<Cliente>();
     
     
     
@@ -15,6 +15,8 @@ ArrayList <Cliente> Lista_Cola = new ArrayList<Cliente>();
         int tmp;
        if( Lista_Cola.contains(pasar) ){
            tmp = Lista_Cola.lastIndexOf(pasar);
+           Lista_Cola.add(tmp++ , pasar);
+           
        
        }
     
