@@ -7,3 +7,5 @@
 	mostar listado 
 # Ruben orero levy
 	nuevo cliente	despachar cliente
+# David Cañete García
+	Cliente abandona la cola
