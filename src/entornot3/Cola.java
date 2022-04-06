@@ -14,6 +14,7 @@ public class Cola {
     public void dejar_pasar(Cliente pasar){
        if( Lista_Cola.contains(pasar) ){
            Lista_Cola.add(1 , pasar);
+
        
        }
     
