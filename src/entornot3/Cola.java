@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package entornot3;
 import  java.util.ArrayList;
 /**
@@ -44,9 +39,29 @@ public class Cola {
         } else {
             System.out.println("el Cliente no estaba en la cola");
         }
-    }public void Adelantar(Cliente Adelantar){
-         
     }
+    
+     public void Adelantar(Cliente Adelantar){
+        int posicion=this.ColaClientes.indexOf(Adelantar);
+         if(posicion<=0){
+             System.out.println("no hay nadie delante");               
+         }else{
+             Cliente temp=this.ColaClientes.get(posicion-1); 
+             this.ColaClientes.add(posicion, temp);
+             this.ColaClientes.set(posicion-1,Adelantar);  
+             this.ColaClientes.remove(posicion+1);
+         }
+    }public void Atrasar(Cliente Atrasar){
+        int posicion=this.ColaClientes.indexOf(Atrasar);
+         if(posicion>=this.ColaClientes.size()){
+             System.out.println("no hay nadie detras");               
+         }else{
+             Cliente temp=this.ColaClientes.get(posicion+1);
+             this.ColaClientes.remove(temp); 
+             this.ColaClientes.add(posicion, temp);
+         }
+    }
+    
     public String toString(){
         String res="";
         res += "\nCola:";
@@ -65,31 +80,4 @@ public class Cola {
     }
         
     }
-    
-
-=======
-
-
-package entornot3;
-
-import java.util.ArrayList;
-
-
-public class Cola {
-    ArrayList <Cliente> Lista_Cola = new ArrayList<Cliente>();
-    
-    
-    
-    
-    public void dejar_pasar(Cliente pasar){
-       if( Lista_Cola.contains(pasar) ){
-           Lista_Cola.add(1 , pasar);
-
-       
-       }
-    
-    }
-    
-    
-}
->>>>>>> 419583f0c48681a50d36386cbfd5a9b9a8610060
+   
