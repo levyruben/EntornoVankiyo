@@ -1,6 +1,15 @@
 package entornot3;
 
 public class Cliente {
+
+    
+
+
+    public Cliente(String nombre) {
+        this.nombre = nombre;
+    }
+    
+
     // Creamos la clase cliente 
 
     private int edad;

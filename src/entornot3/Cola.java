@@ -12,11 +12,9 @@ public class Cola {
     
     
     public void dejar_pasar(Cliente pasar){
-        int tmp;
        if( Lista_Cola.contains(pasar) ){
-           tmp = Lista_Cola.lastIndexOf(pasar);
-           Lista_Cola.add(tmp++ , pasar);
-           
+           Lista_Cola.add(1 , pasar);
+
        
        }
     
