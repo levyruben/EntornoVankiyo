@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -66,3 +67,29 @@ public class Cola {
     }
     
 
+=======
+
+
+package entornot3;
+
+import java.util.ArrayList;
+
+
+public class Cola {
+    ArrayList <Cliente> Lista_Cola = new ArrayList<Cliente>();
+    
+    
+    
+    
+    public void dejar_pasar(Cliente pasar){
+       if( Lista_Cola.contains(pasar) ){
+           Lista_Cola.add(1 , pasar);
+
+       
+       }
+    
+    }
+    
+    
+}
+>>>>>>> 419583f0c48681a50d36386cbfd5a9b9a8610060
