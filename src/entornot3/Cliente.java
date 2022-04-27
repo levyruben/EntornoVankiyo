@@ -11,11 +11,7 @@ package entornot3;
  */
 public class Cliente {
 
-
-
-
     // Creamos la clase cliente 
-
     private int edad;
     private String nombre;
     private boolean sexo; //T: hombre F: mujer
@@ -24,16 +20,18 @@ public class Cliente {
     private double gastoMedio;
     private int NumeroClientes;
 
-
-    public Cliente(String nombre, int edad, boolean sexo) throws Exception {
+    public Cliente(int edad, String nombre, boolean sexo) throws Exception {
         if (nombre.length() <= 3) {
             throw new Exception();
         }
         if (edad < 18) {
             throw new Exception();
         }
+        this.edad = edad;
+        this.nombre = nombre;
+        this.sexo = sexo;
+    }
 
- 
     public Cliente(String nombre, int edad, boolean sexo, int gastoFijo, String productos, double gastoMedio) {
 
         this.edad = edad;
@@ -46,11 +44,8 @@ public class Cliente {
     }
 
 // Get y set de los atributos privados
-
 // ============================ EDAD ============================= // 
-
 // ============================ EDAD ============================= //
-
     public int getEdad() {
         return this.edad;
     }
@@ -61,11 +56,8 @@ public class Cliente {
         }
     }
 
-
 // ============================ NOMBRE ============================= // 
-
 // ============================ NOMBRE ============================= //
-
     public String getNombre() {
         return this.nombre;
     }
@@ -86,9 +78,7 @@ public class Cliente {
     }
 // ============================ Cliente Fijos ============================= //
 
-
 // ============================ toString ============================= // 
-
     public int getgastoFijo() {
         return this.getgastoFijo();
     }
@@ -105,7 +95,6 @@ public class Cliente {
     }
 
 // ============================ toString ============================= //
-
     public String toString() {
         String res = "";
 
