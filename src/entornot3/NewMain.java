@@ -4,15 +4,9 @@
  */
 package entornot3;
 
-/**
- *
- * @author dcg00
- */
 public class NewMain {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
         
         Cliente paco = new Cliente("Paco",25,true);

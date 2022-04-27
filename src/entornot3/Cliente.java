@@ -11,26 +11,21 @@ package entornot3;
  */
 public class Cliente {
 
-    public Cliente(String nombre) {
-        this.nombre = nombre;
-    }
+
 
     private int edad;
     private String nombre;
     private boolean sexo; //T: hombre F: mujer
-    private double gastoFijo;
+    private double gasto;
     private String productos;
-    private double gastoMedio;
-    private int NumeroClientes;
 
-    public Cliente(String nombre, int edad, boolean sexo, int gastoFijo, String productos, int numclientes, double gastoMedio) {
+
+    public Cliente(String nombre, int edad, boolean sexo, int gasto, String productos) {
         this.edad = edad;
         this.nombre = nombre;
         this.sexo = sexo;
-        this.gastoFijo = gastoFijo;
+        this.gasto = gasto;
         this.productos = productos;
-        this.NumeroClientes = numclientes;
-        this.gastoMedio = gastoMedio;
 
     }
 
@@ -75,12 +70,7 @@ public class Cliente {
         return this.getproductos();
     }
 
-// ============================ Gasto medio por cliente  ============================= //    
-    public double gastoMedio(double gasto) {
-        this.gastoMedio = gasto / this.NumeroClientes;
-        return this.gastoMedio;
 
-    }
 
 // ============================ toString ============================= //
     public String toString() {
@@ -88,8 +78,6 @@ public class Cliente {
 
         res += "Nombre: " + this.nombre + "\n";
         res += "Edad: " + this.edad + "\n";
-        res += "Numero de clientes: " + this.NumeroClientes + "\n";
-        res += "Gasto medio de los clientes: " + this.gastoMedio + "\n";
 
         if (sexo) {
             res += "Sexo: Masculino";
