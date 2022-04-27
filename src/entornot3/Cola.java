@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package entornot3;
 import  java.util.ArrayList;
 /**
@@ -7,61 +11,86 @@ import  java.util.ArrayList;
 public class Cola {
     private ArrayList<Cliente> ColaClientes;
     private ArrayList<Cliente> Atendidos;
+
+    
     public Cola(){
+        
         this.ColaClientes= new ArrayList();  
         this.Atendidos=new ArrayList(); 
     }
     public void nuevoCliente(Cliente nuevo){
+        
         this.ColaClientes.add(nuevo);
     }
-    public void Atender(Cliente Atendido){
-        if (this.ColaClientes.contains(Atendido)) {
+    public void Atender(Cliente Atendido)throws ExcepcionesCola{
+        if (this.ColaClientes.contains(Atendido)&&(this.ColaClientes.indexOf(Atendido)==0)) {
             this.ColaClientes.remove(Atendido);
             this.Atendidos.add(Atendido);
             System.out.println("el Cliente ha sido Atendido");
-        } else {
-            System.out.println("el Cliente no estaba en la Cola");
+        } else if(this.ColaClientes.contains(Atendido)&&(this.ColaClientes.indexOf(Atendido)!=0)) {
+            throw new ExcepcionesCola("el Cliente no estaba el primero en la Cola");
+            
+        }else{
+            throw new ExcepcionesCola("el Cliente no estaba  en la Cola");
+            
         }
         
-    }public void Despachar(Cliente despachado){
+    }public void Despachar(Cliente despachado)throws ExcepcionesCola{
         if (this.ColaClientes.contains(despachado)) {
             this.ColaClientes.remove(despachado);    
             System.out.println("el Cliente ha sido Despachado");
         } else {
-            System.out.println("el Cliente no estaba en la Cola");
+            throw new ExcepcionesCola("el Cliente no estaba  en la Cola");
         }
         
     }
-    public void Abandonar(Cliente abandona){
+    public void Abandonar(Cliente abandona)throws ExcepcionesCola{
         if (this.ColaClientes.contains(abandona)) {
             this.ColaClientes.remove(abandona);
             System.out.println("el Cliente abandona la cola");
         } else {
-            System.out.println("el Cliente no estaba en la cola");
+            throw new ExcepcionesCola("el Cliente no estaba  en la Cola");
         }
     }
-    
-     public void Adelantar(Cliente Adelantar){
+     public void Adelantar(Cliente Adelantar)throws ExcepcionesCola{
         int posicion=this.ColaClientes.indexOf(Adelantar);
          if(posicion<=0){
-             System.out.println("no hay nadie delante");               
+             throw new ExcepcionesCola("no hay nadie delante");              
          }else{
              Cliente temp=this.ColaClientes.get(posicion-1); 
              this.ColaClientes.add(posicion, temp);
              this.ColaClientes.set(posicion-1,Adelantar);  
              this.ColaClientes.remove(posicion+1);
          }
-    }public void Atrasar(Cliente Atrasar){
+    }
+     public void Atrasar(Cliente Atrasar)throws ExcepcionesCola{
         int posicion=this.ColaClientes.indexOf(Atrasar);
          if(posicion>=this.ColaClientes.size()){
-             System.out.println("no hay nadie detras");               
+            throw new ExcepcionesCola("no hay nadie detras");                
          }else{
              Cliente temp=this.ColaClientes.get(posicion+1);
              this.ColaClientes.remove(temp); 
              this.ColaClientes.add(posicion, temp);
+             //this.ColaClientes.set(posicion,Atrasar);  
+
          }
     }
-    
+     public ArrayList<Cliente> getColaClientes() {
+        return ColaClientes;
+    }
+
+    public void setColaClientes(ArrayList<Cliente> ColaClientes) {
+        this.ColaClientes = ColaClientes;
+    }
+
+    public ArrayList<Cliente> getAtendidos() {
+        return Atendidos;
+    }
+
+    public void setAtendidos(ArrayList<Cliente> Atendidos) {
+        this.Atendidos = Atendidos;
+    }
+   
     public String toString(){
         String res="";
         res += "\nCola:";
@@ -80,4 +109,5 @@ public class Cola {
     }
         
     }
-   
+    
+
