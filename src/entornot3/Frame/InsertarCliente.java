@@ -5,9 +5,6 @@
 package entornot3.Frame;
 
 import entornot3.Cliente;
-import java.awt.event.KeyEvent;
-import java.util.InputMismatchException;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,14 +28,15 @@ public class InsertarCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        GrupoSexo = new javax.swing.ButtonGroup();
         Volver = new javax.swing.JButton();
         Edad = new javax.swing.JLabel();
         jTextNombre = new javax.swing.JTextField();
         InsertarCliente = new javax.swing.JButton();
         jTextEdad = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        Masculino = new javax.swing.JRadioButton();
+        Femenino = new javax.swing.JRadioButton();
         Sexo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,26 +50,13 @@ public class InsertarCliente extends javax.swing.JFrame {
         Volver.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         Volver.setForeground(new java.awt.Color(0, 0, 0));
         Volver.setText("Volver");
-        Volver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverActionPerformed(evt);
-            }
-        });
 
         Edad.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         Edad.setForeground(new java.awt.Color(255, 255, 255));
         Edad.setText("Edad :");
 
         jTextNombre.setToolTipText("Introducir nombre");
-        jTextNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNombreActionPerformed(evt);
-            }
-        });
         jTextNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextNombreKeyPressed(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextNombreKeyTyped(evt);
             }
@@ -86,18 +71,10 @@ public class InsertarCliente extends javax.swing.JFrame {
                 InsertarClienteMouseClicked(evt);
             }
         });
-        InsertarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InsertarClienteActionPerformed(evt);
-            }
-        });
 
         jTextEdad.setToolTipText("Edad");
         jTextEdad.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jTextEdad.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextEdadKeyPressed(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextEdadKeyTyped(evt);
             }
@@ -107,9 +84,12 @@ public class InsertarCliente extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText(" Nombre :");
 
-        jRadioButton1.setText("jRadioButton1");
+        GrupoSexo.add(Masculino);
+        Masculino.setText("Masculino");
+        Masculino.setToolTipText("");
 
-        jRadioButton2.setText("jRadioButton2");
+        GrupoSexo.add(Femenino);
+        Femenino.setText("Femenino");
 
         Sexo.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         Sexo.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,8 +113,8 @@ public class InsertarCliente extends javax.swing.JFrame {
                                 .addComponent(jTextNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextEdad))
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2)
+                            .addComponent(Masculino)
+                            .addComponent(Femenino)
                             .addComponent(Sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -153,64 +133,48 @@ public class InsertarCliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(Sexo)
                 .addGap(7, 7, 7)
-                .addComponent(jRadioButton1)
+                .addComponent(Masculino)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(Femenino)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 360, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(InsertarCliente)
                     .addComponent(Volver)))
         );
 
+        Masculino.getAccessibleContext().setAccessibleDescription("");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
+    private void InsertarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InsertarClienteMouseClicked
+        // TODO add your handling code here:
+          try {
+        String nombre = jTextNombre.getText();
+        int edad = Integer.parseInt(jTextEdad.getText());
+        boolean sexo = true;
+        if (Masculino.isSelected()) {
+            sexo = true;
+        }
+        if (Femenino.isSelected()) {
+            sexo = false;
+        }
 
-// TODO add your handling code here:
-    }//GEN-LAST:event_VolverActionPerformed
-
-    private void jTextNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNombreActionPerformed
-
-// TODO add your handling code here:
-    }//GEN-LAST:event_jTextNombreActionPerformed
-
-    private void InsertarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarClienteActionPerformed
-        boolean fallo = false;
-        if (fallo) {
+        Cliente Cliente1 = new Cliente(nombre, edad, sexo);
+        System.out.println(Cliente1.getNombre());
+        System.out.println(Cliente1.getEdad());
+        System.out.println(Cliente1.getSexo());
+        this.setVisible(false);
+        Correcto a = new Correcto();
+        a.setVisible(true);
+           } catch (Exception e) {
             this.setVisible(false);
             Fallo_Cliente a = new Fallo_Cliente();
             a.setVisible(true);
-        } else {
-            this.setVisible(false);
-            Menu a = new Menu();
-            a.setVisible(true);
-
         }
-    }//GEN-LAST:event_InsertarClienteActionPerformed
-
-    private void InsertarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InsertarClienteMouseClicked
-        // TODO add your handling code here:
-
-        Cliente cliente1 = new Cliente(nombre, edad, sexo);
 
 
     }//GEN-LAST:event_InsertarClienteMouseClicked
-
-    private void jTextEdadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextEdadKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-
-            try {
-                String texto = this.jTextNombre.getText();
-                edad = Integer.parseInt(texto);
-            } catch (InputMismatchException e) {
-                this.setVisible(false);
-                Fallo_Cliente a = new Fallo_Cliente();
-                a.setVisible(true);
-            }
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextEdadKeyPressed
 
     private void jTextNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNombreKeyTyped
 
@@ -229,25 +193,6 @@ public class InsertarCliente extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_jTextEdadKeyTyped
-
-    private void jTextNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNombreKeyPressed
-        // TODO add your handling code here:
-        try {
-            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                nombre = this.jTextNombre.getText();
-                this.setVisible(false);
-                Correcto a = new Correcto();
-                a.setVisible(true);
-                
-            }
-        } catch (Exception e) {
-            this.setVisible(false);
-            Fallo_Cliente a = new Fallo_Cliente();
-            a.setVisible(true);
-        }
-
-
-    }//GEN-LAST:event_jTextNombreKeyPressed
 
     /**
      * @param args the command line arguments
@@ -283,17 +228,17 @@ public class InsertarCliente extends javax.swing.JFrame {
             }
         });
     }
-    boolean sexo;
-    String nombre;
-    int edad;
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Edad;
+    private javax.swing.JRadioButton Femenino;
+    private javax.swing.ButtonGroup GrupoSexo;
     private javax.swing.JButton InsertarCliente;
+    private javax.swing.JRadioButton Masculino;
     private javax.swing.JLabel Sexo;
     private javax.swing.JButton Volver;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextEdad;
     private javax.swing.JTextField jTextNombre;
     // End of variables declaration//GEN-END:variables

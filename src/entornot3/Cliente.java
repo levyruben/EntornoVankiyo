@@ -2,21 +2,22 @@ package entornot3;
 
 public class Cliente {
 
-    
-
-
     public Cliente(String nombre) {
         this.nombre = nombre;
     }
-    
 
     // Creamos la clase cliente 
-
     private int edad;
     private String nombre;
     private boolean sexo; //T: hombre F: mujer
 
-    public Cliente(String nombre, int edad, boolean sexo) {
+    public Cliente(String nombre, int edad, boolean sexo) throws Exception {
+        if (nombre.length() <= 3) {
+            throw new Exception();
+        }
+        if (edad < 18) {
+            throw new Exception();
+        }
         this.edad = edad;
         this.nombre = nombre;
         this.sexo = sexo;
@@ -24,9 +25,7 @@ public class Cliente {
     }
 
 // Get y set de los atributos privados
-    
 // ============================ EDAD ============================= // 
-   
     public int getEdad() {
         return this.edad;
     }
@@ -38,7 +37,6 @@ public class Cliente {
     }
 
 // ============================ NOMBRE ============================= // 
-    
     public String getNombre() {
         return this.nombre;
     }
@@ -48,7 +46,6 @@ public class Cliente {
     }
 
 // ============================ SEXO ============================= //  
-    
     public boolean getSexo() {
         return this.sexo;
     }
@@ -60,7 +57,6 @@ public class Cliente {
     }
 
 // ============================ toString ============================= // 
-    
     public String toString() {
         String res = "";
 
