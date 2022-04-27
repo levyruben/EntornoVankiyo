@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -9,14 +9,6 @@ package entornot3;
  *
  * @author ruben
  */
-public class Cliente {
-    String nombre;
-    public Cliente(String Nombre){
-        this.nombre=Nombre;
-    }
-=======
-package entornot3;
-
 public class Cliente {
 
     
@@ -91,5 +83,5 @@ public class Cliente {
         return res;
     }
 
->>>>>>> 419583f0c48681a50d36386cbfd5a9b9a8610060
+
 }
