@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package entornot3.Frame;
 
 import entornot3.Cliente;
 
-/**
- *
- * @author david
- */
+
 public class InsertarCliente extends javax.swing.JFrame {
 
     /**
