@@ -27,6 +27,8 @@ public class Correcto extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jButtonVolver = new javax.swing.JButton();
+        jButtonVolverAlMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -36,25 +38,63 @@ public class Correcto extends javax.swing.JFrame {
         jLabel1.setToolTipText("");
         jLabel1.setRequestFocusEnabled(false);
 
+        jButtonVolver.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonVolver.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonVolverMouseClicked(evt);
+            }
+        });
+
+        jButtonVolverAlMenu.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonVolverAlMenu.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonVolverAlMenu.setText("Volver al menu");
+        jButtonVolverAlMenu.setToolTipText("");
+        jButtonVolverAlMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonVolverAlMenuMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+                .addComponent(jButtonVolver)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonVolverAlMenu)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(144, 144, 144)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonVolver)
+                    .addComponent(jButtonVolverAlMenu))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonVolverMouseClicked
+        this.setVisible(false);
+        InsertarCliente a = new InsertarCliente();
+        a.setVisible(true);
+    }//GEN-LAST:event_jButtonVolverMouseClicked
+
+    private void jButtonVolverAlMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonVolverAlMenuMouseClicked
+        this.setVisible(false);
+        Menu b = new Menu();
+        b.setVisible(true);
+    }//GEN-LAST:event_jButtonVolverAlMenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -92,6 +132,8 @@ public class Correcto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonVolver;
+    private javax.swing.JButton jButtonVolverAlMenu;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

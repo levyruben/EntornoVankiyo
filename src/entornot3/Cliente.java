@@ -15,12 +15,8 @@ public class Cliente {
     private int edad;
     private String nombre;
     private boolean sexo; //T: hombre F: mujer
-    private double gastoFijo;
-    private String productos;
-    private double gastoMedio;
-    private int NumeroClientes;
 
-    public Cliente(int edad, String nombre, boolean sexo) throws Exception {
+    public Cliente( String nombre,int edad, boolean sexo) throws Exception {
         if (nombre.length() <= 3) {
             throw new Exception();
         }
@@ -32,16 +28,7 @@ public class Cliente {
         this.sexo = sexo;
     }
 
-    public Cliente(String nombre, int edad, boolean sexo, int gastoFijo, String productos, double gastoMedio) {
-
-        this.edad = edad;
-        this.nombre = nombre;
-        this.sexo = sexo;
-        this.gastoFijo = gastoFijo;
-        this.productos = productos;
-        this.gastoMedio = gastoMedio;
-
-    }
+ 
 
 // Get y set de los atributos privados
 // ============================ EDAD ============================= // 
@@ -79,29 +66,17 @@ public class Cliente {
 // ============================ Cliente Fijos ============================= //
 
 // ============================ toString ============================= // 
-    public int getgastoFijo() {
-        return this.getgastoFijo();
-    }
-
-    public int getproductos() {
-        return this.getproductos();
-    }
+   
 
 // ============================ Gasto medio por cliente  ============================= //    
-    public double gastoMedio(double gasto) {
-        this.gastoMedio = gasto / this.NumeroClientes;
-        return this.gastoMedio;
-
-    }
-
+  
 // ============================ toString ============================= //
     public String toString() {
         String res = "";
 
         res += "Nombre: " + this.nombre + "\n";
         res += "Edad: " + this.edad + "\n";
-        res += "Numero de clientes: " + this.NumeroClientes + "\n";
-        res += "Gasto medio de los clientes: " + this.gastoMedio + "\n";
+
 
         if (sexo) {
             res += "Sexo: Masculino";

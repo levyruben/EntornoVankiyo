@@ -174,9 +174,6 @@
         <Property name="text" type="java.lang.String" value="Masculino"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
-      </AccessibilityProperties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="Femenino">
       <Properties>

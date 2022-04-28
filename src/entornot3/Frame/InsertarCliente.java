@@ -1,8 +1,6 @@
-
 package entornot3.Frame;
 
 import entornot3.Cliente;
-
 
 public class InsertarCliente extends javax.swing.JFrame {
 
@@ -136,32 +134,31 @@ public class InsertarCliente extends javax.swing.JFrame {
                     .addComponent(Volver)))
         );
 
-        Masculino.getAccessibleContext().setAccessibleDescription("");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void InsertarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InsertarClienteMouseClicked
         // TODO add your handling code here:
-          try {
-        String nombre = jTextNombre.getText();
-        int edad = Integer.parseInt(jTextEdad.getText());
-        boolean sexo = true;
-        if (Masculino.isSelected()) {
-            sexo = true;
-        }
-        if (Femenino.isSelected()) {
-            sexo = false;
-        }
+        try {
+            String nombre = jTextNombre.getText();
+            int edad = Integer.parseInt(jTextEdad.getText());
+            boolean sexo = true;
+            if (Masculino.isSelected()) {
+                sexo = true;
+            }
+            if (Femenino.isSelected()) {
+                sexo = false;
+            }
 
-        Cliente Cliente1 = new Cliente(nombre, edad, sexo);
-        System.out.println(Cliente1.getNombre());
-        System.out.println(Cliente1.getEdad());
-        System.out.println(Cliente1.getSexo());
-        this.setVisible(false);
-        Correcto a = new Correcto();
-        a.setVisible(true);
-           } catch (Exception e) {
+            Cliente Cliente1 = new Cliente(nombre, edad, sexo);
+            System.out.println(Cliente1.getNombre());
+            System.out.println(Cliente1.getEdad());
+            System.out.println(Cliente1.getSexo());
+            this.setVisible(false);
+            Correcto a = new Correcto();
+            a.setVisible(true);
+
+        } catch (Exception e) {
             this.setVisible(false);
             Fallo_Cliente a = new Fallo_Cliente();
             a.setVisible(true);
