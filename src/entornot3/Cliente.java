@@ -13,23 +13,35 @@ public class Cliente {
 
 
 
+
+
+
+
+
+
+
+    // Creamos la clase cliente 
     private int edad;
     private String nombre;
     private boolean sexo; //T: hombre F: mujer
-    private double gasto;
-    private String productos;
 
-
-    public Cliente(String nombre, int edad, boolean sexo, int gasto, String productos) {
+    public Cliente( String nombre,int edad, boolean sexo) throws Exception {
+        if (nombre.length() <= 3) {
+            throw new Exception();
+        }
+        if (edad < 18) {
+            throw new Exception();
+        }
         this.edad = edad;
         this.nombre = nombre;
         this.sexo = sexo;
-        this.gasto = gasto;
-        this.productos = productos;
 
     }
 
+ 
+
 // Get y set de los atributos privados
+// ============================ EDAD ============================= // 
 // ============================ EDAD ============================= //
     public int getEdad() {
         return this.edad;
@@ -41,6 +53,7 @@ public class Cliente {
         }
     }
 
+// ============================ NOMBRE ============================= // 
 // ============================ NOMBRE ============================= //
     public String getNombre() {
         return this.nombre;
@@ -62,13 +75,10 @@ public class Cliente {
     }
 // ============================ Cliente Fijos ============================= //
 
-    public int getgastoFijo() {
-        return this.getgastoFijo();
-    }
+// ============================ toString ============================= // 
+   
 
-    public int getproductos() {
-        return this.getproductos();
-    }
+
 
 
 
@@ -78,6 +88,7 @@ public class Cliente {
 
         res += "Nombre: " + this.nombre + "\n";
         res += "Edad: " + this.edad + "\n";
+
 
         if (sexo) {
             res += "Sexo: Masculino";

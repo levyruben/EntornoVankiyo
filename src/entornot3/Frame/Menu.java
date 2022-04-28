@@ -31,6 +31,7 @@ public class Menu extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 204, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusTraversalPolicyProvider(true);
         setType(java.awt.Window.Type.UTILITY);
@@ -40,6 +41,7 @@ public class Menu extends javax.swing.JFrame {
         InsertarCliente.setForeground(new java.awt.Color(0, 0, 0));
         InsertarCliente.setText("Insertar Cliente");
         InsertarCliente.setToolTipText("");
+        InsertarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         InsertarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 InsertarClienteMouseClicked(evt);
