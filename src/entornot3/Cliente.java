@@ -26,12 +26,7 @@ public class Cliente {
     private boolean sexo; //T: hombre F: mujer
 
     public Cliente( String nombre,int edad, boolean sexo) throws Exception {
-        if (nombre.length() <= 3) {
-            throw new Exception();
-        }
-        if (edad < 18) {
-            throw new Exception();
-        }
+
         this.edad = edad;
         this.nombre = nombre;
         this.sexo = sexo;

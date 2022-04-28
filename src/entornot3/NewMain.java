@@ -6,18 +6,18 @@ package entornot3;
 
 public class NewMain {
 
-
     public static void main(String[] args) {
-        
-        Cliente paco = new Cliente("Paco",25,true);
-        Cliente paco1 = new Cliente("Paco1",24,false);
-        Cliente paco2 = new Cliente("Paco2",23,true);
-        Cliente paco3 = new Cliente("Paco3",22,false);
-        Cliente paco4 = new Cliente("Paco4",26,true);
-        
-        System.out.println(paco.toString());
-        
-        
+        try {
+            Cliente paco = new Cliente("Paco", 25, true);
+            Cliente paco1 = new Cliente("Paco1", 24, false);
+            Cliente paco2 = new Cliente("Paco2", 23, true);
+            Cliente paco3 = new Cliente("Paco3", 22, false);
+            Cliente paco4 = new Cliente("Paco4", 10, true);
+            System.out.println(paco.toString());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
     }
-    
+
 }
