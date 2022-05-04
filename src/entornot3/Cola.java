@@ -6,6 +6,7 @@ package entornot3;
 import  java.util.ArrayList;
 
 public class Cola {
+    
     private ArrayList<Cliente> ColaClientes;
     private ArrayList<Cliente> Atendidos;
 
